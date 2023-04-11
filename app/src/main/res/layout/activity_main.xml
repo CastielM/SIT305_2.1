@@ -9,13 +9,15 @@
 
     <Spinner
         android:id="@+id/convertFrom"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:background="@color/purple_500"
+        android:dropDownWidth="match_parent"
         android:entries="@array/units"
         android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +33,9 @@
         android:layout_marginTop="22dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:background="@color/purple_500"
         android:entries="@array/units"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboveConvertToText" />
@@ -45,7 +49,7 @@
         android:layout_marginTop="146dp"
         android:layout_marginEnd="163dp"
         android:layout_marginRight="163dp"
-        android:text="TextView"
+        android:text="@string/abovespinner1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +63,7 @@
         android:layout_marginTop="43dp"
         android:layout_marginEnd="171dp"
         android:layout_marginRight="171dp"
-        android:text="TextView"
+        android:text="@string/abovespinner2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/convertFrom" />
@@ -74,6 +78,7 @@
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
         android:text="Button"
+        app:backgroundTint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputUnit" />

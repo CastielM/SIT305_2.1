@@ -2,6 +2,7 @@
     <string name="app_name">Unit Converter</string>
 
     <string-array name="units">
+        <item>Select a unit</item>
         <item>Celsius</item>
         <item>Fahrenheit</item>
         <item>Kelvin</item>
@@ -9,6 +10,14 @@
 
     <string name="convertHint">
         "Value to convert"
+    </string>
+
+    <string name="abovespinner1">
+        "Convert from"
+    </string>
+
+    <string name="abovespinner2">
+        "Convert to"
     </string>
 
 

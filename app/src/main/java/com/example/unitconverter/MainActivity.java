@@ -2,10 +2,12 @@ package com.example.unitconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -35,9 +37,28 @@ public class MainActivity extends AppCompatActivity {
         convertFrom = findViewById(R.id.convertFrom);
         convertTo = findViewById(R.id.convertTo);
 
-        aboveConvertFromText.setText("Convert from:");
-        aboveConvertToText.setText("Convert to:");
         convertButton.setText("Convert!");
+
+
+
+        convertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                if (inputUnit.getText().toString().length() == 0)
+                {
+                   Toast.makeText(MainActivity.this , "Must enter a value to convert", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    int unit = Integer.parseInt(inputUnit.getText().toString());
+                    unit = unit * 3;
+                    resultText.setText(String.valueOf(unit));
+                }
+            }
+        });
 
 
     }
