@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DecimalFormat;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-
+                final DecimalFormat roundOff = new DecimalFormat("0.00");
                 hideKeyboard(v);
                 String selectedTo = convertTo.getSelectedItem().toString();
                 String selectedFrom = convertFrom.getSelectedItem().toString();
@@ -81,42 +83,74 @@ public class MainActivity extends AppCompatActivity {
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = (result * 1.8) + 32;
-                    resultText.setText("Result: " + String.valueOf(result) + "F");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "F");
                 }
                 else
                 if (selectedFrom.equals("Fahrenheit") && selectedTo.equals("Celsius"))
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = (result - 32) / 1.8;
-                    resultText.setText("Result: " + String.valueOf(result) + "C");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "C");
                 }
                 else
                 if (selectedFrom.equals("Kelvin") && selectedTo.equals("Fahrenheit"))
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = ((result - 273.15) * 1.8) + 32;
-                    resultText.setText("Result: " + String.valueOf(result) + "F");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "F");
                 }
                 else
                 if (selectedFrom.equals("Fahrenheit") && selectedTo.equals("Kelvin"))
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = ((result - 32) / 1.8) + 273.15;
-                    resultText.setText("Result: " + String.valueOf(result) + "K");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "K");
                 }
                 else
                 if (selectedFrom.equals("Kelvin") && selectedTo.equals("Celsius"))
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = result - 273.15;
-                    resultText.setText("Result: " + String.valueOf(result) + "C");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "C");
                 }
                 else
                 if (selectedFrom.equals("Celsius") && selectedTo.equals("Kelvin"))
                 {
                     double result = Double.parseDouble(inputUnit.getText().toString());
                     result = result + 273.15;
-                    resultText.setText("Result: " + String.valueOf(result) + "K");
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "K");
+                }
+
+                else
+                if (selectedFrom.equals("Inches") && selectedTo.equals("Centimetres"))
+                {
+                    double result = Double.parseDouble(inputUnit.getText().toString());
+                    result = result * 2.54;
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "cm");
+                }
+
+                else
+                if (selectedFrom.equals("Centimetres") && selectedTo.equals("Inches"))
+                {
+                    double result = Double.parseDouble(inputUnit.getText().toString());
+                    result = result / 2.54;
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + '"');
+                }
+
+                else
+                if (selectedFrom.equals("Pounds") && selectedTo.equals("Kilograms"))
+                {
+                    double result = Double.parseDouble(inputUnit.getText().toString());
+                    result = result * 0.453592;
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "kg");
+                }
+
+                else
+                if (selectedFrom.equals("Kilograms") && selectedTo.equals("Pounds"))
+                {
+                    double result = Double.parseDouble(inputUnit.getText().toString());
+                    result = result / 0.453592;
+                    resultText.setText("Result: " + String.valueOf(roundOff.format(result)) + "lb");
                 }
 
                 //if none of the above cases, through an error, at the moment should throw if you choose to convert to the same unit

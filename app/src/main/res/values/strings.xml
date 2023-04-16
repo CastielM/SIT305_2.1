@@ -6,6 +6,17 @@
         <item>Celsius</item>
         <item>Fahrenheit</item>
         <item>Kelvin</item>
+        <item>Inches</item>
+        <item>Feet</item>
+        <item>Yards</item>
+        <item>Miles</item>
+        <item>Centimetres</item>
+        <item>Metres</item>
+        <item>Pounds</item>
+        <item>Ounces</item>
+        <item>Tons</item>
+        <item>Grams</item>
+        <item>Kilograms</item>
     </string-array>
 
     <string name="convertHint">
